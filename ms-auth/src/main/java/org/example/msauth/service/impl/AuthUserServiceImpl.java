@@ -26,7 +26,7 @@ public class AuthUserServiceImpl implements AuthUserService {
 
     @Override
     public AuthUser save(AuthUserDto authUserDto) {
-        Optional<AuthUser> user = authUserRepository.findByUsername(authUserDto.getUserName());
+        Optional<AuthUser> user = authUserRepository.findByUserName(authUserDto.getUserName());
         if (user.isPresent())
             return null;
         String password = passwordEncoder.encode(authUserDto.getPassword());
@@ -35,18 +35,12 @@ public class AuthUserServiceImpl implements AuthUserService {
                 .password(password)
                 .build();
 
-
-
-
         return authUserRepository.save(authUser);
     }
 
-
-
-
     @Override
     public TokenDto login(AuthUserDto authUserDto) {
-        Optional<AuthUser> user = authUserRepository.findByUsername(authUserDto.getUserName());
+        Optional<AuthUser> user = authUserRepository.findByUserName(authUserDto.getUserName());
         if (!user.isPresent())
             return null;
         if (passwordEncoder.matches(authUserDto.getPassword(), user.get().getPassword()))
@@ -54,15 +48,12 @@ public class AuthUserServiceImpl implements AuthUserService {
         return null;
     }
 
-
-
-
     @Override
     public TokenDto validate(String token) {
         if (!jwtProvider.validate(token))
             return null;
         String username = jwtProvider.getUserNameFromToken(token);
-        if (!authUserRepository.findByUsername(username).isPresent())
+        if (!authUserRepository.findByUserName(username).isPresent())
             return null;
         return new TokenDto(token);
     }
