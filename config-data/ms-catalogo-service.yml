@@ -1,6 +1,10 @@
 server:
+<<<<<<< HEAD
   #port: 8081
   port: ${PORT:${SERVER_PORT:0}}
+=======
+  port: 8081
+>>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 spring:
   application:
     name: ms-catalogo-service
@@ -24,9 +28,15 @@ springdoc:
 eureka:
   client:
     serviceUrl:
+<<<<<<< HEAD
       #defaultZone: http://localhost:8090/eureka
       defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
   instance:
     #hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+=======
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    hostname: localhost
+>>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 

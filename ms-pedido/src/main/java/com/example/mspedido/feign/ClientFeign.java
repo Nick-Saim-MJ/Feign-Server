@@ -1,5 +1,6 @@
 package com.example.mspedido.feign;
 
+<<<<<<< HEAD
 import com.example.mspedido.dto.ClientDto;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,4 +18,7 @@ public interface ClientFeign {
     default ResponseEntity<ClientDto> clientListById(Integer id, Exception e) {
         return ResponseEntity.ok(new ClientDto());
     }
+=======
+public interface ClientFeign {
+>>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 }

@@ -27,6 +27,7 @@ eureka:
   instance:
     hostname: localhost
 
+<<<<<<< HEAD
 resilience4j.circuitbreaker:
   instances:
     productListByIdCB:
@@ -45,3 +46,5 @@ resilience4j.circuitbreaker:
       waitDurationInOpenState: 5s
 
 
+=======
+>>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180

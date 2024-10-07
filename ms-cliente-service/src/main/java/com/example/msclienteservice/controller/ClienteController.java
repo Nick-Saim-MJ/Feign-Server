@@ -21,8 +21,13 @@ public class ClienteController {
     }
 
     @GetMapping("/{id}")
+<<<<<<< HEAD
     public ResponseEntity<Cliente> getById(@PathVariable Integer id) {
         return ResponseEntity.ok(clienteService.findById(id).get());
+=======
+    public ResponseEntity<Optional<Cliente>> getById(@PathVariable Integer id) {
+        return ResponseEntity.ok(clienteService.findById(id));
+>>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
     }
 
     @PostMapping
