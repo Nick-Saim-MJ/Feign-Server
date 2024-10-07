@@ -9,11 +9,7 @@ spring:
         git:
           uri: https://github.com/Nick-Saim-MJ/Feign-Server.git # ruta del repositorio git
           searchPaths: config-data
-<<<<<<< HEAD
           default-label: Security
-=======
-          default-label: main
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
   security:
     user:
       name: root
