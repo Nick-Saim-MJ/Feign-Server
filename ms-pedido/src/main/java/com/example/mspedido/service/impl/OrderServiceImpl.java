@@ -1,11 +1,7 @@
 package com.example.mspedido.service.impl;
 
 import com.example.mspedido.entity.Order;
-<<<<<<< HEAD
 import com.example.mspedido.feign.ClientFeign;
-=======
-import com.example.mspedido.entity.OrderDetail;
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 import com.example.mspedido.feign.ProductFeign;
 import com.example.mspedido.repository.OrderRepository;
 import com.example.mspedido.service.OrderService;
@@ -23,11 +19,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private ProductFeign productFeign;
-<<<<<<< HEAD
     @Autowired
     private ClientFeign clientFeign;
-=======
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 
     @Override
     public List<Order> list() {
@@ -42,7 +35,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Optional<Order> findById(Integer id) {
         Optional<Order> order = orderRepository.findById(id);
-<<<<<<< HEAD
         order.get().setClientDto(clientFeign.getById(order.get().getClientId()).getBody());
         /*for (OrderDetail orderDetail : order.get().getOrderDetails()) {
             orderDetail.setProductDto(productFeign.getById(orderDetail.getProductId()).getBody());
@@ -54,12 +46,6 @@ public class OrderServiceImpl implements OrderService {
             orderDetail.setProductDto(productFeign.getById(orderDetail.getProductId()).getBody());
         });
         return order;
-=======
-        for (OrderDetail orderDetail : order.get().getOrderDetails()) {
-            orderDetail.setProductDto(productFeign.getById(orderDetail.getProductId()).getBody());
-        }
-        return orderRepository.findById(id);
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
     }
 
     @Override

@@ -1,10 +1,6 @@
 package com.example.mspedido.entity;
 
-<<<<<<< HEAD
 import com.example.mspedido.dto.ClientDto;
-=======
-import com.example.mspedido.dto.ProductDto;
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -24,10 +20,6 @@ public class Order {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id")
     private List<OrderDetail> orderDetails;
-<<<<<<< HEAD
     @Transient
     private ClientDto clientDto;
-=======
-
->>>>>>> 2babafd24013e70a61e6ca664d6ec673e8cdf180
 }
